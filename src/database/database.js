@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 function connectToDatabase() {
     mongoose
-    .connect('mongodb+srv://blue-proj-2:pCCl1c5k0PrGRPGZ@Cluster0.qypa8.mongodb.net/Cluster0?retryWrites=true&w=majority', {
+    .connect('mongodb+srv://blue-proj-2:pCCl1c5k0PrGRPGZ@Cluster0.qypa8.mongodb.net/Cluster0?retryWrites=true&w=majority&ssl=true', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
