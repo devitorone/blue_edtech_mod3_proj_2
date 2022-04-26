@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 function connectToDatabase() {
     mongoose
-    .connect('mongodb+srv://blue-proj-2:pCCl1c5k0PrGRPGZ@Cluster0.qypa8.mongodb.net/Cluster0?retryWrites=true&w=majority&ssl=true', {
+    .connect('mongodb://blue-proj-2:<password>@cluster0-shard-00-00.qypa8.mongodb.net:27017,cluster0-shard-00-01.qypa8.mongodb.net:27017,cluster0-shard-00-02.qypa8.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-11sdzx-shard-0&authSource=admin&retryWrites=true&w=majority&ssl=true', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     })
@@ -17,3 +17,4 @@ function connectToDatabase() {
 
 
 module.exports = connectToDatabase;
+// pCCl1c5k0PrGRPGZ

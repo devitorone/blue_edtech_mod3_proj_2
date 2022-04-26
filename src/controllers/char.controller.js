@@ -9,8 +9,9 @@ const findCharByIdController = async (req, res) => {
 };
 
 const createCharController = async (req, res) => {
+  const char= req.body
   if (
-    !req.body 
+    !char 
     // !req.body.title ||
     // !req.body.author ||
     // !req.body.price ||
@@ -18,7 +19,7 @@ const createCharController = async (req, res) => {
   ) {
     return res.status(400).send({ message: 'Envie o objeto completo!' });
   }
-  res.send(await charService.createCharService(req.body));
+  res.send(await charService.createCharService(char));
 };
 
 const updateCharController = (req, res) => {
