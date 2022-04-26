@@ -4,21 +4,21 @@ const findCharController = (req, res) => {
   res.send(charService.findCharService());
 };
 
-const findCharByIdController = (req, res) => {
-  res.send(charService.findCharService(req.params.id));
+const findCharByIdController = async (req, res) => {
+  res.send(await charService.findCharService(req.params.id));
 };
 
-const createCharController = (req, res) => {
+const createCharController = async (req, res) => {
   if (
-    !req.body ||
-    !req.body.title ||
-    !req.body.author ||
-    !req.body.price ||
-    !req.body.img
+    !req.body 
+    // !req.body.title ||
+    // !req.body.author ||
+    // !req.body.price ||
+    // !req.body.img
   ) {
     return res.status(400).send({ message: 'Envie o objeto completo!' });
   }
-  res.send(charService.createCharService(req.params.id));
+  res.send(await charService.createCharService(req.params.id));
 };
 
 const updateCharController = (req, res) => {
